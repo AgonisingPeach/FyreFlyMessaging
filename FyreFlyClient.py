@@ -47,6 +47,12 @@ CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 ######################################### FUNCTIONS #########################################
 
+def clear():
+    if os.name == 'nt':
+        _ = os.system('cls')
+    else:
+        _ = os.system('clear')
+
 ## Called initially to try and connect to the server
 ## Tries connecting 5 times and if it still cannot connect it quits with a message
 ## If it does connect then it will start the recieve() thread.
@@ -109,7 +115,7 @@ def receive():
                 ## Command. If it isnt then it clears the screen and prints the entirety
                 ## Of the message buffer.
                 if message != '<quit>':
-                    os.system('cls')
+                    clear()
                     print(MESSAGE_LOG)
 
                 ## This states that if the client does want to send a <quit> request,
@@ -153,7 +159,7 @@ def send_msg():
 
 ## Clear Screen and Starts the connection test to see if the server is online.
 def Main():
-    os.system('cls')
+    clear()
     connect_to_server(1)
 
 if __name__ == '__main__':

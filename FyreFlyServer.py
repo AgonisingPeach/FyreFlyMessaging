@@ -64,6 +64,12 @@ SERVER.bind(ADDR)
 
 ######################################### FUNCTIONS #########################################
 
+def clear():
+    if os.name == 'nt':
+        _ = os.system('cls')
+    else:
+        _ = os.system('clear')
+
 ## This thread is always running to check whether new connections have been established
 ## By the client applications.
 def accept_connections():
@@ -194,7 +200,7 @@ def server_cmds():
         ## The User can clear the screen on the server terminal whenever they like and the banner
         ## Will always be displayed after clearing.
         elif cmd.lower() == 'cls':
-            os.system('cls')
+            clear()
             print(BANNER)
 
         ## This command allows the User to get a list of all the active clients in the chat room
@@ -263,7 +269,7 @@ def Main():
 ## Clear the screen on start and display the main Banner.
 ## Then jumps to the main TCP related stuff.
 if __name__ == '__main__':
-    os.system('cls')
+    clear()
     print(BANNER)
     Main()
 
