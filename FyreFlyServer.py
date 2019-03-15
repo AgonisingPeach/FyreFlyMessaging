@@ -64,7 +64,10 @@ SERVER.bind(ADDR)
 
 ######################################### FUNCTIONS #########################################
 
+## This is called when the User Clears the screen
 def clear():
+    
+    ## Checks to see if operating system is Windows, if not it will use the other clearscreen variant.
     if os.name == 'nt':
         _ = os.system('cls')
     else:
