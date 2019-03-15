@@ -45,9 +45,13 @@ CONNECTED = True
 ## Creates Socket on load.
 CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-######################################### FUNCTIONS #########################################
+######################################### FUNCTIONS #######################################
 
+
+## This function is called whenever a new message is received from the server.
 def clear():
+    
+    ## Checks if the operating system is Windows. If not it uses the other variant.
     if os.name == 'nt':
         _ = os.system('cls')
     else:
