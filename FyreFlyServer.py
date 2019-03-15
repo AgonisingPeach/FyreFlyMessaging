@@ -50,7 +50,7 @@ BANNER = '''
 ##                                             ##
 ##         FyreFly Messaging - SERVER          ##
 ##                                             ##
-##                Version 0.1a                 ##
+##                Version 0.2a                 ##
 ##     Copyright (C) 2019 - Aaron Edwards      ##
 ##                                             ##
 ##       Email: edwardsaaron94@gmail.com       ##
